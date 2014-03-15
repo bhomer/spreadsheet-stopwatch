@@ -7,4 +7,6 @@ angular.module('spreadsheetStopwatchApp')
       'AngularJS',
       'Karma'
     ];
+//        ng-click method here
+
   });
