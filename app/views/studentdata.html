@@ -1,16 +1,36 @@
-<!--
-GET https://api.parse.com/1/classes/Students
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ui-sref="home">Home</a></li>
+    <li><a ui-sref="studentdata">All Student Data</a></li>
+    <li><a ui-sref="students">Students</a></li>
 
-/reference studentservice from here
--->
+  </ul>
+  <h3 class="text-muted">GradeUp Tutoring Database</h3>
+</div>
+
 <h1>
     Student Data
 </h1>
 
-{{students}}
-
-
-
+<div ng-repeat="student in students">
+    <h2>{{student.name}}'s Sessions</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Duration</td>
+                <td>Mileage</td>
+                <td>Payment</td>
+                <td>Date</td>
+            </tr>
+        </thead>
+        <tr ng-repeat="session in student.sessions">
+            <td>{{session.duration}}</td>
+            <td>{{session.mileage}}</td>
+            <td>{{session.payment}}</td>
+            <td>{{session.date}}</td>
+        </tr>
+    </table>
+</div>
 
 
 <!--<li ng-repeat="team in teams">-->

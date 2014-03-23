@@ -16,11 +16,9 @@ angular.module('spreadsheetStopwatchApp')
                     'X-Parse-REST-API-Key':'BjP9OqQdN6BoJa7t4yEUwsnGgpQxjHyfSr0oOVwF'
                   },
                   url: 'https://api.parse.com/1/classes/Students'}).success(function (data, status, headers, config) {
-                  if (Array.isArray(data)) {
-                      deferred.resolve(data[0]);
-                  } else {
-                      deferred.resolve(data);
-                  }
+                  
+                      deferred.resolve(data.results);
+                  
                   
               }).error(function (data, status, headers, config) {
                   deferred.reject(data);
@@ -28,9 +26,12 @@ angular.module('spreadsheetStopwatchApp')
                 
               return deferred.promise;
           },
+          //add method called createSession, have it accept student id
+          //inside this method, do a method: 'POST' to https://api.parse.com/1/classes/Students/
       }
     // AngularJS will instantiate a singleton by calling "new" on this function
   });
+
 
 //studentservice needs to talk to parse and GET all the students that are currently in the parse api and then return that to angular
 //

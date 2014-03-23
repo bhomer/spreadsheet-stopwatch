@@ -1,28 +1,27 @@
 'use strict';
 
 angular.module('spreadsheetStopwatchApp', [
-    'ui.router'
+    'ui.router',
+    'firebase',
+    'ngGrid'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/home");
+    console.log("WEREWERWERWER");
   //
   // Now set up the states
   $stateProvider
     .state('home', {
       url: "/home",
+      controller: 'StudentsCtrl',
       templateUrl: "views/home.html"
     })
     .state('studentdata', {
       url: "/studentdata",
       templateUrl: "views/studentdata.html",
-      controller: "StudentsCtrl",
-      resolve: {
-        students: function (studentservice) {
-            return studentservice.getStudents();
-        }
-      }
+      controller: "StudentsCtrl"
     })
   
 });

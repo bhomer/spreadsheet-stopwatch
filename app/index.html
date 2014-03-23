@@ -12,22 +12,22 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!--<script type="text/javascript" src=""-->
     <!-- endbuild -->
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.17.min.js"></script>  
   </head>
-  <body ng-app="spreadsheetStopwatchApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+    <div class="container" ng-app="spreadsheetStopwatchApp" ui-view=" "></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -47,10 +47,14 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ng-grid/build/ng-grid.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="bower_components/angularfire/angularfire.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -58,22 +62,6 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/studentservice.js"></script>
-
-
-    <script type="text/javascript">
-        Parse.initialize("bD2pS0o4TiiAw6epInWXluNAxTacZITpDE8Rdh1v", "m4bb7uFXlz6mL5Liw9gaCoWfHVQnKIuNcPouQsBm");
-
-        
-//        run this code when there is something to put in here, i.e. when somebody hits add session on app, probably using an ng-click
-        var Sessions = Parse.Object.extend("Sessions");
-        var Sessions = new Sessions();
-        /*
-        Sessions.save({Name: "Max"}).then(function(object) {
-            
-//            alert("yay! it worked");
-        });
-        */
-    </script>
         <script src="scripts/controllers/students.js"></script>
         <!-- endbuild -->
 </body>
