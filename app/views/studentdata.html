@@ -1,15 +1,14 @@
 <div class="header">
   <ul class="nav nav-pills pull-right">
-    <li class="active"><a ui-sref="home">Home</a></li>
+    <li class="active"><a ui-sref="home">App Home</a></li>
     <li><a ui-sref="studentdata">All Student Data</a></li>
-    <li><a ui-sref="students">Students</a></li>
 
   </ul>
   <h3 class="text-muted">GradeUp Tutoring Database</h3>
 </div>
 
 <h1>
-    Student Data
+    <center>Student Data</center>
 </h1>
 
 <div ng-repeat="student in students">
@@ -17,17 +16,24 @@
     <table class="table table-striped">
         <thead>
             <tr>
+                <td>Date of Session</td>
                 <td>Duration</td>
                 <td>Mileage</td>
                 <td>Payment</td>
-                <td>Date</td>
+                <td>Paid?</td>
             </tr>
+<!--
+            <tr>
+                <td>Total</td>
+            </tr>
+-->
         </thead>
         <tr ng-repeat="session in student.sessions">
+            <td>{{session.date}}</td>
             <td>{{session.duration}}</td>
             <td>{{session.mileage}}</td>
             <td>{{session.payment}}</td>
-            <td>{{session.date}}</td>
+            <td>{{session.paid}}</td>
         </tr>
     </table>
 </div>

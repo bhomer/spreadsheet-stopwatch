@@ -11,6 +11,7 @@ angular.module('tutoringDatabaseApp', ['firebase'])
 angular.module('spreadsheetStopwatchApp')
   .controller('StudentsCtrl', function ($scope, $firebase, $location, $filter) {
       var ref = new Firebase("https://tutoring-database.firebaseio.com/students");
+//      add date for each student here min 23 of 2nd recording
       $scope.students = $firebase(ref);
       
       $scope.addSession = function() {

@@ -3,7 +3,8 @@
 angular.module('spreadsheetStopwatchApp', [
     'ui.router',
     'firebase',
-    'ngGrid'
+    'ngGrid',
+    'ui.date'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   //

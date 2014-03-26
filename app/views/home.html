@@ -1,15 +1,14 @@
 <div class="header">
   <ul class="nav nav-pills pull-right">
-    <li class="active"><a ui-sref="home">Home</a></li>
+    <li class="active"><a ui-sref="home">App Home</a></li>
     <li><a ui-sref="studentdata">All Student Data</a></li>
-    <li><a ui-sref="students">Students</a></li>
 
   </ul>
-  <h3 class="text-muted">GradeUp Tutoring Database</h3>
+  <h3 class="text-muted">Tutoring Database</h3>
 </div>
 
 <div class="jumbotron">
-      <h1>Tutoring Database</h1>
+      <h2>GradeUp Tutoring Database</h2>
         <!--need a dropdown list here of students-->
     <!--    use an ng-select directive in order to build dropdown-->
         <select ng-model="selectedStudent">
@@ -17,18 +16,23 @@
   <option id="greet" ng-selected="selected" ng-repeat="(id, student) in students" value="{{id}}">{{student.name}}</option>
             
 </select>
+    <div ng-show="selectedStudent">
+      <div>
+        date of session:<input ui-date  ng-model="students[selectedStudent].session_date"/>
+        </div>
+      <div>
+        default duration:<input type="text" ng-model="students[selectedStudent].default_duration"/>
+        </div>
       <div>
         default mileage:<input type="text" ng-model="students[selectedStudent].default_mileage"/>
-        </div>
-        <div>
-        default duration:<input type="text" ng-model="students[selectedStudent].default_duration"/>
         </div>
         <div>
         default payment:<input type="text" ng-model="students[selectedStudent].default_payment"/>
         </div>
         <div>
-        date of session:<input type="text" ng-model="students[selectedStudent].session_date"/>
+        paid:<input type="text" ng-model="students[selectedStudent].paid"/>
         </div>
     <!--ng-click function-->
       <p><a class="btn btn-lg btn-success" ng-href="#" ng-click="addSession()">Add Session</a></p>
+    </div>
     </div>
