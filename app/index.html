@@ -28,6 +28,28 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+      
+<!--ADD FACEBOOK TO YOUR APP
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '{your-app-id}',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>  
+-->
+      
     <div class="container" ng-app="spreadsheetStopwatchApp" ui-view=" "></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -49,17 +71,15 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-
-    <script type="text/javascript" src="bower_components/angular-ui-date/src/date.js"></script>
-
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/ng-grid/build/ng-grid.min.js"></script>
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
     <script src="bower_components/angularfire/angularfire.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-ui-date/src/date.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

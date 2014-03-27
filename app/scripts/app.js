@@ -10,7 +10,6 @@ angular.module('spreadsheetStopwatchApp', [
   //
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/home");
-    console.log("WEREWERWERWER");
   //
   // Now set up the states
   $stateProvider
