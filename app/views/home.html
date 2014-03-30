@@ -9,8 +9,8 @@
 
 <div class="jumbotron">
       <h2>GradeUp Tutoring Database</h2>
-        <!--need a dropdown list here of students-->
-    <!--    use an ng-select directive in order to build dropdown-->
+        <!--dropdown list of students-->
+    <!--    ng-select directive used to build dropdown-->
         <select ng-model="selectedStudent">
   <option>Students</option>
   <option id="greet" ng-selected="selected" ng-repeat="(id, student) in students" value="{{id}}">{{student.name}}</option>
