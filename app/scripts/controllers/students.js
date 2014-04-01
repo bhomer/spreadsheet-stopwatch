@@ -18,17 +18,23 @@ angular.module('spreadsheetStopwatchApp')
           var ref = new Firebase("https://tutoring-database.firebaseio.com/students/"+$scope.selectedStudent+"/sessions");
           $scope.currentStudentSessions = $firebase(ref);
           
-          //Option 1: Add new session numbers to current totals, send new totals to DB, define mileageTotal variable below
-//        var mileageTotal = () {
-//          $scope.totals.$add({
-//            mileageTotal: $scope.totals.mileageTotal + $scope.students[$scope.selectedStudent].default_mileage,
-//            durationTotal: $scope.totals.mileageTotal + $scope.students[$scope.selectedStudent].default_duration,
-//            paymentTotal: $scope.totals.mileageTotal + $scope.students[$scope.selectedStudent].default_payment    
-//          });
-//        }
+          //Add new session numbers to current totals, send new totals to DB, define mileageTotal variable below
+          var mileageTotal = () {
+              $scope.totals.$add({
+              mileageTotal: $scope.totals.mileageTotal + $scope.students[$scope.selectedStudent].default_mileage,
+              });
+          })
+          var durationTotal = () {
+              $scope.totals.$add({
+              durationTotal: $scope.totals.durationTotal + $scope.students[$scope.selectedStudent].default_duration,
+              });
+          })
+          var paymentTotal = () {
+              $scope.totals.$add({
+              paymentTotal: $scope.totals.mileageTotal + $scope.students[$scope.selectedStudent].default_payment    
+              });
+          })
           
-          
-          //Option 2: Use a standard js file (not angular) and jquery to create totals
         
           $scope.currentStudentSessions.$add({
               date     : $scope.students[$scope.selectedStudent].session_date,
@@ -40,11 +46,4 @@ angular.module('spreadsheetStopwatchApp')
           
           $location.path("/studentdata")
       }
-      
-      //Option 3: Use angular to loop through student sessions and create totals on the fly.
-      
-      
-      //create function on $scope called addSession that gets called on an ng-click in html's button
-      //
-      //inside that, $scope.students.$add({payment: 0, time: 0});
   });
